@@ -1,0 +1,45 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+
+# The name of our service
+service: twilioCommunication
+
+# Provider and language
+provider:
+  name: aws
+  runtime: python2.7
+  region: us-east-1
+  # Pre-existing role is used here with the appropriate permissions already granted.
+  # Alternatively, you can omit this and Serverless will create a new role with the appropriate
+  # permissions.
+  role: arn:aws:iam::219104658389:role/lambda-s3-execution-role
+  timeout: 60
+
+# Defining the handlers here.
+functions:
+  processRequest:
+    handler: process_request.process
+    environment:
+      TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${env:TWILIO_AUTH_TOKEN}
+    events:
+      - http:
+          path: process_request
+          method: get
+          integration: lambda
+          request:
+            template:
+              application/json: '{ "body" : "$input.params(''Body'')" , "toNumber" : "$input.params(''To'')" , "fromNumber" : "$input.params(''From'')" , "image" : "$input.params(''MediaUrl0'')" , "numMedia" : "$input.params(''NumMedia'')", "twilioSignature" : "$input.params(''X-Twilio-Signature'')" }'
+          response:
+            headers:
+              Content-Type: "'application/xml'"
+            template: "#set($inputRoot=$input.path('$'))<Response><Message><Body>$inputRoot</Body></Message></Response>"
+
+  sendResponse:
+    handler: send_response.process
+    environment:
+      TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${env:TWILIO_AUTH_TOKEN}
+    events:
+      - sns: dispatch_response
