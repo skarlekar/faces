@@ -146,14 +146,6 @@ def get_args():
 
 def main():
     args = get_args()
-    # request = { "Records":
-    #     [
-    #         {   "Sns": {
-    #                     "Message": "{\"collection_name\": \"celebs\", \"from_number\": \"+17037727371\", \"to_number\": \"+17037214313\", \"image_url\": \"https://goo.gl/cvE4s\"}"
-    #                     }
-    #         }
-    #     ]
-    # }
 
     test_message = "{\"collection_name\": \""+args.collection+"\", \"from_number\": \"18007001234\", \"to_number\": \"18779991234\", \"image_url\": \""+args.image+"\"}"
     print ("Test message is: ", test_message)
