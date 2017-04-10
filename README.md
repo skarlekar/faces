@@ -11,7 +11,8 @@ You are a Developer or Solutions Architect wanting to learn the Serverless Frame
 
 ----------
 
-#**Serverless Architecture vs. Serverless Framework**
+**Serverless Architecture vs. Serverless Framework**
+====================================================
 
 Separating the Wheat from the Chaff
 ===================================
