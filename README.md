@@ -1,19 +1,29 @@
 # **faces**
-A human face recognition service built with Serverless framework using Twilio and Amazon Rekognition.
+A human face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/) and [Amazon Rekognition](https://aws.amazon.com/rekognition).
 
-This project provides an overview of ‘serverless’ computing and drills the concept down by building a compelling example of ‘Shazam for Celebrities’ dubbed 'faces' using the Serverless Framework. Per Gartner, by 2022 most cloud architectures will evolve to a fundamentally serverless model rendering the cloud platform architectures dominating in 2017 as legacy architectures. 
-
-Serverless architecture reflects the core-promise of cloud-computing by offering agility and capability on demand at a value price. It will be at your best interest to understand this technology, the evolving eco-system and how to harness it as it provides high productivity at low cost.
+This project provides an overview of *Serverless* computing and drills the concept down by building a compelling example of *Shazam for Celebrities* dubbed ***faces*** using the Serverless Framework. 
 
 # Audience
 You are a Developer or Solutions Architect wanting to learn the Serverless Framework and how to use it for developing your own auto-scaling, pay-per-execution, event-driven applications. You want to build applications that matters to business instead of spending time configuring, deploying and maintaining infrastructure. The boost in efficiency that the Serverless architecture promises is very compelling for you to ignore.
+
+# The *faces* Application
+The *faces* application is an event-driven application taking advantage of the user's mobile SMS/MMS for the presentation tier, Twilio in the middle-tier to bridge the SMS world and AWS Gateway and a set of AWS Lambda functions making use of AWS Rekogniton for image processing.
+
+In a typical usage, the user snaps a picture of an celebrity using his/her phone camera and sends the image along with the instructions to a certain phone number hosted on Twilio. The application validates the instructions and responds immediately if there is an error in the instruction set or with a message to await the actual response. Momentarily, the user gets   
+
+The *faces* project consists of two services:
+ - [Twilio Communication Service](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService)
+ - [Face Recognition Service](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)
+
 
 
 ----------
 
 **Serverless Architecture vs. Serverless Framework**
 ====================================================
+Per Gartner, by 2022 most cloud architectures will evolve to a fundamentally serverless model rendering the cloud platform architectures dominating in 2017 as legacy architectures. 
 
+Serverless architecture reflects the core-promise of cloud-computing by offering agility and capability on demand at a value price. It will be at your best interest to understand this technology, the evolving eco-system and how to harness it as it provides high productivity at low cost.
 Separating the Wheat from the Chaff
 -----------------------------------
 
@@ -80,3 +90,5 @@ The Serverless Framework allows you to provision and deploy a REST API, data pip
 
 The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers.
 
+
+----------
