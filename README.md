@@ -15,7 +15,7 @@ You are a Developer or Solutions Architect wanting to learn the Serverless Frame
 ====================================================
 
 Separating the Wheat from the Chaff
-===================================
+-----------------------------------
 
 Serverless computing model is an emerging trend and quite often misunderstood because of the hype and build-up surrounding the topic. 
 
