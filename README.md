@@ -17,7 +17,7 @@ The *faces* project consists of two services:
  - [Twilio Communication Service](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService)
  - [Face Recognition Service](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)
 
-
+The services are decoupled to allow for using different presentation tiers in future.
 
 ----------
 
