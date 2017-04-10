@@ -26,6 +26,7 @@ The services are decoupled to allow for using different presentation tiers in fu
 Per Gartner, by 2022 most cloud architectures will evolve to a fundamentally serverless model rendering the cloud platform architectures dominating in 2017 as legacy architectures. 
 
 Serverless architecture reflects the core-promise of cloud-computing by offering agility and capability on demand at a value price. It will be at your best interest to understand this technology, the evolving eco-system and how to harness it as it provides high productivity at low cost.
+
 Separating the Wheat from the Chaff
 -----------------------------------
 
