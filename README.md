@@ -38,8 +38,14 @@ The above picture illustrates the high-level architecture of the application. De
 9. The Response Processor picks up the response and constructs a SMS message and calls Twilio’s SMS service.
 10. Twilio validates the From number and sends the message to the corresponding To number. 
 
-
 ----------
+##Components
+The application consists of the following components:
+1. Python - Python is a programming language that lets you work quickly
+and integrate systems more effectively. We will use Python 2.7 for building the *CelebritySleuth* Application.
+2. Twilio - Twilio Messaging Service for having the user communicate with the application through SMS. 
+3. Amazon AWS - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
+4. IMDb - IMDbPY is a Python package useful to retrieve and manage the data of the IMDb movie database about movies, people, characters and companies
 
 
 **Serverless Architecture vs. Serverless Framework**
