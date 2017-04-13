@@ -1,7 +1,7 @@
 # **CelebritySleuth**
 A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDB API](http://imdbpy.sourceforge.net/).
 
-This project provides an overview of *Serverless* computing and drills the concept down by building a compelling example of *Shazam for Celebrities* dubbed ***CelebritySleuth*** using the Serverless Framework. 
+This project provides an overview of *Serverless* computing and drills the concept down by helping build a compelling example of *Shazam for Celebrities* dubbed ***CelebritySleuth*** using the Serverless Framework. 
 
 # Audience
 You are a Developer or Solutions Architect wanting to learn the Serverless Framework and how to use it for developing your own auto-scaling, pay-per-execution, event-driven applications. You want to build applications that matters to business instead of spending time configuring, deploying and maintaining infrastructure. The boost in efficiency that the Serverless architecture promises is very compelling for you to ignore.
@@ -13,7 +13,7 @@ In a typical usage, the user snaps a picture of an celebrity using his/her phone
 
 To begin with you have to train the application to recognize the faces by building a collection of celebrities. You do this by sending a random sample of celebrity pictures (image URLs) and their corresponding names. The more pictures of a celebrity, the more accurate the recognition will be.
 
-The *faces* project consists of two services:
+The *CelebritySleuth* application consists of two services:
  - [Twilio Communication Service](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService)
  - [Face Recognition Service](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)
 
@@ -21,7 +21,7 @@ The services are decoupled to allow for using different presentation tiers in fu
 
 
 ----------
-# The Architecture
+## The Architecture
 The *CelebritySleuth* application uses Lambda functions for compute needs. As a result the application components are provisioned just before usage and brought down after use resulting in a low-cost, highly-scalable application.
 
 ![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
