@@ -26,6 +26,7 @@ The *CelebritySleuth* application uses Lambda functions for compute needs. As a 
 
 ![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
 
+The above picture illustrates the high-level architecture of the application. Details are as follows:
 1. User sends a picture and commands to add/match face to a collection. Alternatively, the user can create a collection – in which case a picture is not required. The SMS/MMS is sent to a telephone number hosted by Twilio.
 2. Twilio intercepts the message and forwards it to an API Gateway based on the user’s Twilio configuration.
 3. API Gateway translates TwiML to JSON and calls the Request Processor lambda function.
