@@ -38,6 +38,10 @@ The above picture illustrates the high-level architecture of the application. De
 9. The Response Processor picks up the response and constructs a SMS message and calls Twilio’s SMS service.
 10. Twilio validates the From number and sends the message to the corresponding To number. 
 
+
+----------
+
+
 ##Components
 
 The application consists of the following components:
