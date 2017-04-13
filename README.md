@@ -42,8 +42,7 @@ The above picture illustrates the high-level architecture of the application. De
 ----------
 
 
-Components
-==========
+##Components
 
 The application consists of the following components:
 1. Python - Python is a programming language that lets you work quickly
