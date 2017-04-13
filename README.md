@@ -1,17 +1,17 @@
-# **faces**
-A human face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDB API](http://imdbpy.sourceforge.net/).
+# **CelebritySleuth**
+A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDB API](http://imdbpy.sourceforge.net/).
 
-This project provides an overview of *Serverless* computing and drills the concept down by building a compelling example of *Shazam for Celebrities* dubbed ***faces*** using the Serverless Framework. 
+This project provides an overview of *Serverless* computing and drills the concept down by building a compelling example of *Shazam for Celebrities* dubbed ***CelebritySleuth*** using the Serverless Framework. 
 
 # Audience
 You are a Developer or Solutions Architect wanting to learn the Serverless Framework and how to use it for developing your own auto-scaling, pay-per-execution, event-driven applications. You want to build applications that matters to business instead of spending time configuring, deploying and maintaining infrastructure. The boost in efficiency that the Serverless architecture promises is very compelling for you to ignore.
 
-# The *faces* Application
-The *faces* application is an event-driven application taking advantage of the user's mobile SMS/MMS for the presentation tier, Twilio in the middle-tier to bridge the SMS world and AWS Gateway and a set of AWS Lambda functions written in Python making use of AWS Rekogniton for image processing and IMDB for information on the celebrities.
+# The *CelebritySleuth* Application
+The *CelebritySleuth* application is an event-driven application taking advantage of the user's mobile SMS/MMS for the presentation tier, Twilio in the middle-tier to bridge the SMS world and AWS Gateway and a set of AWS Lambda functions written in Python making use of AWS Rekogniton for image processing and IMDB for gathering information on the celebrities.
 
-In a typical usage, the user snaps a picture of an celebrity using his/her phone camera and sends the image along with the instructions to a certain phone number hosted on Twilio. The application validates the instructions and responds immediately if there is an error in the instruction set or with a message to await the actual response. Momentarily, the user gets a response with the name and biography of the celebrity.
+In a typical usage, the user snaps a picture of an celebrity using his/her phone camera and sends the image along with the instructions to a certain phone number hosted on Twilio. The system validates the instructions and responds immediately if there is an error in the instruction set or with a message to await the actual response if the validation passes. Momentarily, the user gets a response with the name and biography of the celebrity.
 
-To begin with you the Developer have to train the application to recognize the faces by building a collection of celebrities. You do this by sending a random sample of celebrity pictures (image URLs) and their corresponding names. The more pictures of a celebrity, the more accurate the recognition will be.
+To begin with you have to train the application to recognize the faces by building a collection of celebrities. You do this by sending a random sample of celebrity pictures (image URLs) and their corresponding names. The more pictures of a celebrity, the more accurate the recognition will be.
 
 The *faces* project consists of two services:
  - [Twilio Communication Service](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService)
