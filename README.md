@@ -19,6 +19,13 @@ The *faces* project consists of two services:
 
 The services are decoupled to allow for using different presentation tiers in future.
 
+
+----------
+# The Architecture
+The *CelebritySleuth* application uses Lambda functions for compute needs. As a result the application components are provisioned just before usage and brought down after use resulting in a low-cost, highly-scalable application.
+
+![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
+
 ----------
 
 **Serverless Architecture vs. Serverless Framework**
