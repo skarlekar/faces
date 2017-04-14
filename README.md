@@ -104,7 +104,7 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ source ./setTwilio.sh
 
 #### Test Twilio Setup
-To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*. *Note: Make sure you are running this in your Python 2.7 environment.*
+To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*. This program simply sends a message to your mobile number using your Twilio credentials. *Note: Make sure you are running this in your Python 2.7 environment.*
 
     $ python twilioTester/sendmessage.py
 
