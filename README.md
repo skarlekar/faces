@@ -56,6 +56,28 @@ and integrate systems more effectively. We will use Python 2.7 for building the 
 
 5. IMDb - IMDbPY is a Python package useful to retrieve and manage the data of the IMDb movie database about movies, people, characters and companies.
 
+## Setup Instructions
+### Installing Python
+If you are on a Mac or Linux machine, you probably already have Python installed. On Windows you have to install Python. 
+
+Regardless of your operating system, you are better off using a virtual environment for running Python. [Anaconda](https://www.continuum.io/downloads) or its terse version [Miniconda](https://conda.io/miniconda.html) is a Python virtual environment that allows you to manage various versions and environments of Python. The installers come with Python and the package manager *conda* with it. Follow the instructions [here](https://conda.io/docs/install/quick.html) to install Miniconda. For this project we will use Python 2.7.
+
+#### Creating a Python Virtual Environment.
+After installing Python 2.7, create an virtual environment as follows. Note:  I am calling my virtual environment *faces*:
+    $ conda create -n faces python=2
+    
+#### Initialize your Python Virtual Environment
+To start working in your new Python virtual environment:
+    $ source activate faces
+
+### Install Git
+Git is a popular code revision control system. To install Git for your respective operating system follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+### Install *CelebritySleuth* 
+To install CelebritySleuth from Git, follow the instructions below:
+
+mkdir DevFestDC
+cd DevFestDC
 
 
 **Serverless Architecture vs. Serverless Framework**
@@ -132,3 +154,4 @@ The Serverless Framework is an MIT open-source project, actively maintained by a
 
 
 ----------
+
