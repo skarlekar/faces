@@ -21,11 +21,6 @@ The *CelebritySleuth* application consists of two services:
 
 The services are decoupled to allow for using different presentation tiers in future.
 
-
-----------
-## Usage:
-TO DO: Describe the end-user usage pattern with a snapshots of various commands in use.
-
 ----------
 ## The Architecture
 The *CelebritySleuth* application uses Lambda functions for compute needs. As a result the application components are provisioned just before usage and brought down after use resulting in a low-cost, highly-scalable application.
@@ -160,9 +155,18 @@ If you get the following message, your Serverless setup is working.
     }
 
 ## Twilio Communication Service
+TO DO: Description of the twilioCommunicationService goes here.
+
+### Deploy Twilio Communication Service
+To do: Instructions for deploying the twilioCommunicationService goes here.
 
 ## Face Recognition Service
+TO DO: Description of the faceRecognitionService goes here.
 
+### Deploy Face Recognition Service
+To do: Instructions for deploying the faceRecognitionService goes here.
 
-
+----------
+## Usage:
+TO DO: Describe the end-user usage pattern with a snapshots of various commands in use. 
 
