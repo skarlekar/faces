@@ -117,15 +117,21 @@ Ensure your Serverless framework is operational using the following:
 
     $ serverless --version
 
-#### Testing Serverless Setup
-To test your Serverless setup, create a test directory. In the test directory, create a Lambda function from the default template as follows:
+### Amazon AWS Setup
+1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
+2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+
+### Testing your Serverless Setup
+Now that you have setup AWS, it is time to test your Serverless setup by creating a mock function using the Serverless framework.
+
+Create a test directory. In the test directory, create a Lambda function from the default template as follows:
 
     $ sls create --template aws-python --name sls-test
-This should create two files:
+This should create two files in the current directory:
 > serverless.yml
 > handler.py
 
-The serverless.yml declares a sample service and a function to print a message stating that your function executed successfully. 
+The *serverless.yml* declares a sample service and a function. The *handler.py*  returns a message stating that your function executed successfully. 
 
 To deploy the function, simply type:
 
@@ -134,7 +140,8 @@ To deploy the function, simply type:
 This should deploy the function. The verbose option provides extra information.
 
 To test your function, type:
-$ sls invoke --function hello
+
+    $ sls invoke --function hello
 
 If you get the following message, your Serverless setup is working.
 
@@ -148,12 +155,9 @@ If you get the following message, your Serverless setup is working.
         "statusCode": 200
     }
 
-### Amazon AWS Setup
-1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
-2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+## Twilio Communication Service
 
-
-
+## Face Recognition Service
 
 
 
