@@ -78,8 +78,19 @@ Git is a popular code revision control system. To install Git for your respectiv
 ### Install *CelebritySleuth* 
 To install CelebritySleuth from Git, follow the instructions below:
 
-mkdir DevFestDC
-cd DevFestDC
+    $ mkdir DevFestDC
+    $ cd DevFestDC
+    $ git clone --recursive https://github.com/skarlekar/faces.git
+
+### Twilio Setup
+If you do not already have a Twilio number, [signup](https://www.twilio.com/try-twilio) for Twilio and get a trial phone number. You can use this number for 30-days. 
+
+#### Setup Twilio Environment Variables
+Update the *setTwilio.sh* in the repository with your credentials from Twilio and setup your environment.
+
+    $ vi setTwilio.sh
+    $ source ./setTwilio.sh
+
 
 
 **Serverless Architecture vs. Serverless Framework**
@@ -156,4 +167,5 @@ The Serverless Framework is an MIT open-source project, actively maintained by a
 
 
 ----------
+
 
