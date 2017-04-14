@@ -11,7 +11,7 @@ You are a Developer or Solutions Architect wanting to learn the Serverless Frame
 # The *CelebritySleuth* Application
 The *CelebritySleuth* application is an event-driven application taking advantage of the user's mobile SMS/MMS for the presentation tier, Twilio in the middle-tier to bridge the SMS world and AWS Gateway and a set of AWS Lambda functions written in Python making use of AWS Rekogniton for image processing and IMDB for gathering information on the celebrities.
 
-In a typical usage, the user snaps a picture of an celebrity using his/her phone camera and sends the image along with the instructions to a certain phone number hosted on Twilio. The system validates the instructions and responds immediately if there is an error in the instruction set or with a message to await the actual response if the validation passes. Momentarily, the user gets a response with the name and biography of the celebrity.
+In a typical usage, the user snaps a picture of an celebrity (on TV?!) using his/her phone camera and sends the image along with the instructions to a certain phone number hosted on Twilio. The system validates the instructions and responds immediately if there is an error in the instruction set or with a message to await the actual response if the validation passes. Momentarily, the user gets a response with the name and biography of the celebrity.
 
 To begin with you have to train the application to recognize the faces by building a collection of celebrities. You do this by sending a random sample of celebrity pictures (image URLs) and their corresponding names. The more pictures of a celebrity, the more accurate the recognition will be.
 
@@ -93,6 +93,13 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ vi setTwilio.sh
     $ source ./setTwilio.sh
 
+#### Test Twilio Setup
+To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*.
+
+    $ python twilioTester/sendmessage.py
+
+If you receive a message with an image on your mobile, your Twilio is setup is working.
+
 ### Install node.js and Serverless framework
 Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework and ensure your Serverless framework is operational using the following:
 
@@ -101,6 +108,7 @@ Serverless framework is a node.js application. To use Serverless framework and r
 ### Amazon AWS Setup
 1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
 2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+
 
 
 
