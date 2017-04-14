@@ -205,6 +205,8 @@ Ensure there are no errors in the deployment process. You can also head on to yo
 
 Also ensure the Lambda functions are created by verifying that the *twilioCommunication-dev-processRequest* and *twilioCommunication-dev-sendResponse* lambda functions is available in the [AWS Lambda console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list).
 
+Ensure your Twilio credentials are setup as environment variables by clicking on each of the Lambda functions and verifying that the *TWILIO_AUTH_TOKEN* and *TWILIO_ACCOUNT_SID* have been created with the correct values in the *Environment Variables* section in the *Code* tab.
+
 #### Setup Twilio Messaging Service
 Follow the instructions below to setup the Messaging Service in Twilio and associate your Twilio number to the Messaging Service:
 
@@ -231,7 +233,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *Save*.
 
 ### Face Recognition Service
-TO DO: Description of the faceRecognitionService goes here.
+The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) uses ...
 
 #### Deploy Face Recognition Service
 Change directory to the faceRecognitionService directory and deploy the service by running *sls deploy* as shown below:
