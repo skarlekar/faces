@@ -23,6 +23,10 @@ The services are decoupled to allow for using different presentation tiers in fu
 
 
 ----------
+## Usage:
+TO DO: Describe the end-user usage pattern with a snapshots of various commands in use.
+
+----------
 ## The Architecture
 The *CelebritySleuth* application uses Lambda functions for compute needs. As a result the application components are provisioned just before usage and brought down after use resulting in a low-cost, highly-scalable application.
 
