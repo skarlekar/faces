@@ -20,6 +20,7 @@ Table of Contents
          * [Testing your Serverless Setup](#testing-your-serverless-setup)
          * [Twilio Communication Service](#twilio-communication-service)
             * [Deploy Twilio Communication Service](#deploy-twilio-communication-service)
+            * [Setup Twilio Messaging Service](#setup-twilio-messaging-service)
          * [Face Recognition Service](#face-recognition-service)
             * [Deploy Face Recognition Service](#deploy-face-recognition-service)
       * [Usage:](#usage)
