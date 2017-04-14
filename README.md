@@ -29,15 +29,25 @@ The *CelebritySleuth* application uses Lambda functions for compute needs. As a 
 ![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
 
 The above picture illustrates the high-level architecture of the application. Details are as follows:
+
 1. User sends a picture and commands to add/match face to a collection. Alternatively, the user can create a collection – in which case a picture is not required. The SMS/MMS is sent to a telephone number hosted by Twilio.
+
 2. Twilio intercepts the message and forwards it to an API Gateway based on the user’s Twilio configuration.
+
 3. API Gateway translates TwiML to JSON and calls the Request Processor lambda function.
+
 4. The Request Processor lambda validates the commands and put a message to the appropriate topic on SNS. If the validation fails, it returns the error message to the user via Twilio.
+
 5. When a message arrives in the Create Collection topic, a lambda is triggered which adds the named collection in AWS Rekognition via Boto libraries. A success/error message is put in the Response Processor topic.
+
 6. When a message arrives in Add Face topic, a lambda is triggered which identifies  the most prominent face in the image and adds the metadata for the face to the given collection. If there is no faces identified, it creates an error message and sends the response to the Response Processor topic.
+
 7. When a message arrives in Match Face topic, a lambda is triggered which identifies the most prominent face in the image and matches the metadata for that face with known faces in the collection. If a match is found, the corresponding person’s name is returned. The Lambda then uses IMDB to lookup the biography of the person.
+
 8. The various lambda-based processors drops the response message on the Response Processor topic.
+
 9. The Response Processor picks up the response and constructs a SMS message and calls Twilio’s SMS service.
+
 10. Twilio validates the From number and sends the message to the corresponding To number. 
 
 
@@ -94,7 +104,7 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ source ./setTwilio.sh
 
 #### Test Twilio Setup
-To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*.
+To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*. *Note: Make sure you are running this in your Python 2.7 environment.*
 
     $ python twilioTester/sendmessage.py
 
