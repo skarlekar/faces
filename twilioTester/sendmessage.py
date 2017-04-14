@@ -1,5 +1,5 @@
 from twilio.rest import TwilioRestClient
-import os
+import os 
 
 def getTwilioCredentials():
     SID = os.environ['TWILIO_ACCOUNT_SID']
