@@ -194,15 +194,16 @@ Assuming your local Serverless setup is complete and the test above to test your
 
 Set your Twilio credentials by running the shell script you updated earlier. 
 
- 
-
     $ source ./setTwilio.sh
 
- Deploy the service by running sls deploy as shown below:
+Change directory to the twilioCommunicationService directory and deploy the service by running *sls deploy* as shown below:
 
+    $ cd twilioCommunicationService
     $ sls deploy --verbose
 
-Ensure there are no errors in the deployment process.
+Ensure there are no errors in the deployment process. You can also head on to your [AWS Console](https://console.aws.amazon.com/apigateway/home?region=us-east-1#/apis) and verify that the API Gateway has been created. You should see an API Gateway called *dev-twilioCommunication*. 
+
+Also ensure the Lambda functions are created by verifying that the *twilioCommunication-dev-processRequest* and *twilioCommunication-dev-sendResponse* lambda functions is available in the [AWS Lambda console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list).
 
 #### Setup Twilio Messaging Service
 Follow the instructions below to setup the Messaging Service in Twilio and associate your Twilio number to the Messaging Service:
@@ -229,13 +230,16 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *Save*.
 
-
-
 ### Face Recognition Service
 TO DO: Description of the faceRecognitionService goes here.
 
 #### Deploy Face Recognition Service
-To do: Instructions for deploying the faceRecognitionService goes here.
+Change directory to the faceRecognitionService directory and deploy the service by running *sls deploy* as shown below:
+
+    $ cd faceRecognitionService
+    $ sls deploy --verbose
+
+Ensure there are no errors in the deployment process. You can also head on to your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list) and verify that the Lambda functions *faceRecognition-dev-addFace*, *faceRecognition-dev-matchFace* and *faceRecogniton-dev-createCollection* has been created.
 
 ----------
 ## Usage:
