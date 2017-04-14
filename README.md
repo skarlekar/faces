@@ -1,14 +1,32 @@
-**Table of Contents:**
+Table of Contents
+-----------------
 
-
-[TOC]
-
-* [CelebritySleuth](#celebritysleuth)
-* [Audience](#audience)
+   * [<strong>CelebritySleuth</strong>](#celebritysleuth)
+   * [Audience](#audience)
+   * [The <em>CelebritySleuth</em> Application](#the-celebritysleuth-application)
+      * [The Architecture](#the-architecture)
+      * [Components](#components)
+      * [Setup Instructions](#setup-instructions)
+         * [Installing Python](#installing-python)
+            * [Creating a Python Virtual Environment.](#creating-a-python-virtual-environment)
+            * [Initialize your Python Virtual Environment](#initialize-your-python-virtual-environment)
+         * [Install Git](#install-git)
+         * [Install <em>CelebritySleuth</em>](#install-celebritysleuth)
+         * [Twilio Setup](#twilio-setup)
+            * [Setup Twilio Environment Variables](#setup-twilio-environment-variables)
+            * [Test Twilio Setup](#test-twilio-setup)
+         * [Install node.js and Serverless framework](#install-nodejs-and-serverless-framework)
+         * [Amazon AWS Setup](#amazon-aws-setup)
+         * [Testing your Serverless Setup](#testing-your-serverless-setup)
+         * [Twilio Communication Service](#twilio-communication-service)
+            * [Deploy Twilio Communication Service](#deploy-twilio-communication-service)
+         * [Face Recognition Service](#face-recognition-service)
+            * [Deploy Face Recognition Service](#deploy-face-recognition-service)
+      * [Usage:](#usage)
 
 
 # **CelebritySleuth**
-A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
+A celebrity face recognition service built with [Serverless Framewor## Heading ##k](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
 
 This project provides an overview of *Serverless* computing and drills the concept down by helping build a compelling example of *Shazam for Celebrities* dubbed ***CelebritySleuth*** using the Serverless Framework. 
 
@@ -168,7 +186,7 @@ If you get the following message, your Serverless setup is working.
     }
 
 ### Twilio Communication Service
-TO DO: Description of the twilioCommunicationService goes here.
+The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service 
 
 #### Deploy Twilio Communication Service
 To do: Instructions for deploying the twilioCommunicationService goes here.
