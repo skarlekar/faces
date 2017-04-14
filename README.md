@@ -83,7 +83,7 @@ To install CelebritySleuth from Git, follow the instructions below:
     $ git clone --recursive https://github.com/skarlekar/faces.git
 
 ### Twilio Setup
-If you do not already have a Twilio number, [signup](https://www.twilio.com/try-twilio) for Twilio and get a trial phone number. You can use this number for 30-days. 
+If you do not already have a Twilio number, [signup](https://www.twilio.com/try-twilio) for Twilio and get a trial phone number with MMS capability. You can use this number for 30-days during the trial period.
 
 #### Setup Twilio Environment Variables
 Update the *setTwilio.sh* in the repository with your credentials from Twilio and setup your environment.
@@ -91,6 +91,12 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ vi setTwilio.sh
     $ source ./setTwilio.sh
 
+### Install node.js and Serverless framework
+Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website. 
+
+### Amazon AWS Setup
+1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
+2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
 
 **Serverless Architecture vs. Serverless Framework**
