@@ -111,13 +111,47 @@ To test your Twilio setup, run the Python program *sendmessage.py* under *twilio
 If you receive a message with an image on your mobile, your Twilio is setup is working.
 
 ### Install node.js and Serverless framework
-Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework and ensure your Serverless framework is operational using the following:
+Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework. 
+
+Ensure your Serverless framework is operational using the following:
 
     $ serverless --version
+
+#### Testing Serverless Setup
+To test your Serverless setup, create a test directory. In the test directory, create a Lambda function from the default template as follows:
+
+    $ sls create --template aws-python --name sls-test
+This should create two files:
+> serverless.yml
+> handler.py
+
+The serverless.yml declares a sample service and a function to print a message stating that your function executed successfully. 
+
+To deploy the function, simply type:
+
+    $ sls deploy --verbose
+
+This should deploy the function. The verbose option provides extra information.
+
+To test your function, type:
+$ sls invoke --function hello
+
+If you get the following message, your Serverless setup is working.
+
+      WARNING: You are running v1.9.0. v1.10.0 will include the following breaking changes:
+        - Some lifecycle events for the deploy plugin will move to a new package plugin. More info -> https://git.io/vy1zC
+    
+      You can opt-out from these warnings by setting the "SLS_IGNORE_WARNING=*" environment variable.
+    
+    {
+        "body": "{\"input\": {}, \"message\": \"Go Serverless v1.0! Your function executed successfully!\"}",
+        "statusCode": 200
+    }
 
 ### Amazon AWS Setup
 1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
 2. Setup your AWS credentials by following the instructions from [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+
 
 
 
