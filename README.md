@@ -186,10 +186,40 @@ If you get the following message, your Serverless setup is working.
     }
 
 ### Twilio Communication Service
-The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service 
+The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. Twilio Messaging service will be configured to forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the process_request Lambda function in the twilioCommunicationService.
+
 
 #### Deploy Twilio Communication Service
-To do: Instructions for deploying the twilioCommunicationService goes here.
+Follow the instructions below to deploy the twilioCommunicationService using the Serverless framework:
+
+1. 
+
+#### Setup Twilio Messaging Service
+Follow the instructions below to setup the Messaging Service in Twilio and associate your Twilio number to the Messaging Service:
+
+1. In the Twilio website, login to your account and head to the [Programmable SMS Dashboard](https://www.twilio.com/console/sms/dashboard).
+
+2. Click on the **+** under Messaging Services with Copilot to add a new Messaging service.
+
+3. Give a name to your service and click on *Create*.
+
+4. Under *Properties* in the *USE CASE* drop-down, select *Chat Bot/Interactive 2-way*.
+
+5. In the *Inbound Settings* section, ensure *PROCESS INBOUND MESSAGES* is checked.
+
+6. Copy and paste the AWS API Gateway URL from your AWS console into the *REQUEST URL* field and select HTTP GET in the drop-down next to the field.
+
+7. Leave rest of the fields to its default value.
+
+8. Head to the [Numbers](https://www.twilio.com/console/phone-numbers/incoming) section in the Twilio console.
+
+9. Click on the number assigned to you. This will take you to the section where you can configure what should happen when an SMS message is sent to your Phone Number.
+
+10. Under the *Messaging* section, select *Messaging Service* under the *CONFIGURE WITH* drop-down.
+
+11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *Save*.
+
+
 
 ### Face Recognition Service
 TO DO: Description of the faceRecognitionService goes here.
