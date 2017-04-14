@@ -186,13 +186,23 @@ If you get the following message, your Serverless setup is working.
     }
 
 ### Twilio Communication Service
-The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. Twilio Messaging service will be configured to forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the process_request Lambda function in the twilioCommunicationService.
+The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. The Twilio Messaging service will forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the  Request Processor (*process_request*) Lambda function in the *twilioCommunicationService*.
 
 
 #### Deploy Twilio Communication Service
-Follow the instructions below to deploy the twilioCommunicationService using the Serverless framework:
+Assuming your local Serverless setup is complete and the test above to test your Serverless setup passes, follow the instructions below to deploy the *twilioCommunicationService* using the Serverless framework:
 
-1. 
+Set your Twilio credentials by running the shell script you updated earlier. 
+
+ 
+
+    $ source ./setTwilio.sh
+
+ Deploy the service by running sls deploy as shown below:
+
+    $ sls deploy --verbose
+
+Ensure there are no errors in the deployment process.
 
 #### Setup Twilio Messaging Service
 Follow the instructions below to setup the Messaging Service in Twilio and associate your Twilio number to the Messaging Service:
