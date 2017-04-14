@@ -73,6 +73,10 @@ and integrate systems more effectively. We will use Python 2.7 for building the 
 
 5. IMDb - IMDbPY is a Python package useful to retrieve and manage the data of the IMDb movie database about movies, people, characters and companies.
 
+
+----------
+
+
 ## Setup Instructions
 ### Installing Python
 If you are on a Mac or Linux machine, you probably already have Python installed. On Windows you have to install Python. 
