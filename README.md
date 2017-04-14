@@ -159,7 +159,9 @@ Create a test directory. In the test directory, create a Lambda function from th
 
     $ sls create --template aws-python --name sls-test
 This should create two files in the current directory:
+
 > serverless.yml
+> 
 > handler.py
 
 The *serverless.yml* declares a sample service and a function. The *handler.py*  returns a message stating that your function executed successfully. 
