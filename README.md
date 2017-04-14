@@ -64,10 +64,12 @@ Regardless of your operating system, you are better off using a virtual environm
 
 #### Creating a Python Virtual Environment.
 After installing Python 2.7, create an virtual environment as follows. Note:  I am calling my virtual environment *faces*:
+   
     $ conda create -n faces python=2
     
 #### Initialize your Python Virtual Environment
 To start working in your new Python virtual environment:
+
     $ source activate faces
 
 ### Install Git
