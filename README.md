@@ -1,3 +1,9 @@
+**Table of Contents:**
+
+[TOC]
+
+
+
 # **CelebritySleuth**
 A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
 
@@ -154,16 +160,16 @@ If you get the following message, your Serverless setup is working.
         "statusCode": 200
     }
 
-## Twilio Communication Service
+### Twilio Communication Service
 TO DO: Description of the twilioCommunicationService goes here.
 
-### Deploy Twilio Communication Service
+#### Deploy Twilio Communication Service
 To do: Instructions for deploying the twilioCommunicationService goes here.
 
-## Face Recognition Service
+### Face Recognition Service
 TO DO: Description of the faceRecognitionService goes here.
 
-### Deploy Face Recognition Service
+#### Deploy Face Recognition Service
 To do: Instructions for deploying the faceRecognitionService goes here.
 
 ----------
