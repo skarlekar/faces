@@ -6,6 +6,9 @@
 * [CelebritySleuth] (#celebritysleuth)
 * [Audience] (#audience)
 
+* [gh-md-toc](#gh-md-toc)
+  * [Table of contents](#table-of-contents)
+
 # **CelebritySleuth**
 A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
 
