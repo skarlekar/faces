@@ -74,4 +74,3 @@ The Serverless Framework allows you to provision and deploy a REST API, data pip
 The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers.
 
 
-----------
