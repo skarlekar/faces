@@ -92,7 +92,9 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ source ./setTwilio.sh
 
 ### Install node.js and Serverless framework
-Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website. 
+Serverless framework is a node.js application. To use Serverless framework and run the CelebritySleuth application you need to install node.js. Follow the [instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) from Serverless website to install both node.js and the Serverless framework and ensure your Serverless framework is operational using the following:
+
+    $ serverless --version
 
 ### Amazon AWS Setup
 1. Sign into your AWS account or [sign-up](https://console.aws.amazon.com/console/home?region=us-east-1) for one.
