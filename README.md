@@ -273,7 +273,7 @@ where *collection-name* is the name of the collection you want to create.
 Example:
 *face addcol celebs*
 
-![enter image description here](https://github.com/skarlekar/faces/blob/master/example-addcol.png)
+![example of adding a collection](https://github.com/skarlekar/faces/blob/master/example-addcol.png)
 
 
 ----------
@@ -288,7 +288,7 @@ where *collection-name* is the name of an existing collection and first-name_las
 Example:
 *face addimg celebs Sean_Connery*
 
-![enter image description here](https://github.com/skarlekar/faces/blob/master/example-addimg.png)
+![example of adding an image to a collection](https://github.com/skarlekar/faces/blob/master/example-addimg.png)
 
 
 ----------
@@ -303,6 +303,9 @@ where *collection-name* is the name of an existing collection. This command must
 Example:
 *face match celebs*
 
-![enter image description here](https://github.com/skarlekar/faces/blob/master/example-matchface.png)
+![snapshot of matching a celebrity face](https://github.com/skarlekar/faces/blob/master/example-matchface.png)
 
 ----------
+#### Application in Action:
+Following is a sample video of the application in action:
+![sample video of the application in action](https://github.com/skarlekar/faces/blob/master/example-mel-gibson-match_720.mp4)
