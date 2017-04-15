@@ -241,7 +241,9 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) supports three functions. They are:
 
 > **createCollection**: To add a collection.
->  **addFace**: To add a face to an existing collection 
+> 
+>  **addFace**: To add a face to an existing collection.
+>   
 >  **matchFace**: To match a face in a collection and look up the biography of the matched person's name in IMDb.
 
 A *collection* is a logical group of face indexes (face vectors) and their corresponding names. When you create a collection using the *createCollection* Lambda function, it is empty. On the back-end, createCollection creates a collection in AWS Rekognition. You can then add new faces to the collection and associate it with a given name. The collection thus created can then be used for searching images for known faces with high degree of confidence.  Physically, the face indexes are stored in a database on a server managed by AWS Rekognition. You do not have direct access to this database.
