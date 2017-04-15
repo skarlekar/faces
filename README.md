@@ -307,6 +307,6 @@ Example:
 ![snapshot of matching a celebrity face](https://github.com/skarlekar/faces/blob/master/example-matchface.png)
 
 ----------
-#### Application in Action:
-Following is a sample video of the application in action:
-![sample video of the application in action](https://github.com/skarlekar/faces/blob/master/example-mel-gibson-match_720.mp4)
+### Application in Action:
+Following is a sample animation of the application in action:
+![sample GIF of the application in action](https://github.com/skarlekar/faces/blob/master/mel.gif)
