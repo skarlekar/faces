@@ -28,7 +28,7 @@ Table of Contents
 
 
 # **CelebritySleuth**
-A celebrity face recognition service built with [Serverless Framewor## Heading ##k](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
+A celebrity face recognition service built with [Serverless Framework](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
 
 This project provides an overview of *Serverless* computing and drills the concept down by helping build a compelling example of *Shazam for Celebrities* dubbed ***CelebritySleuth*** using the Serverless Framework. 
 
