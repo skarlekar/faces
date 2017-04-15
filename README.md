@@ -308,5 +308,6 @@ Example:
 
 ----------
 ### Application in Action:
+
 Following is a sample animation of the application in action:
 ![sample GIF of the application in action](https://github.com/skarlekar/faces/blob/master/mel.gif)
