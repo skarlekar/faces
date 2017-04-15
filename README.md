@@ -236,7 +236,14 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *Save*.
 
 ### Face Recognition Service
-The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) uses ...
+The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) supports three functions. They are:
+> **createCollection**: To add a collection.
+>  **addFace**: To add a face to an existing collection 
+>  **matchFace**: To match a face in a collection and look up the biography of the matched person's name in IMDb.
+
+A *collection* is a logical group of face indexes (face vectors) and their corresponding names. When you create a collection using the *createCollection* Lambda function, it is empty. On the back-end, createCollection creates a collection in AWS Rekognition. You can then add new faces to the collection and associate it with a given name. The collection thus created can then be used for searching images for known faces with high degree of confidence.  Physically, the face indexes are stored in a database on a server managed by AWS Rekognition. You do not have direct access to this database.
+
+Once you have created a collection you can add faces to the collection using the *addFace* Lambda function. To add a face to a collection, you have to provide an image, a collection name and name you want to associate with the face. If there are no faces in the given image, or if the collection does not exist an error message is returned. The *addFace* function uses AWS Rekognition to detect faces in the given image, extract features from the face and persist information about facial features detected in the image to AWS Rekognition. The facial features are stored as searchable image vectors.
 
 #### Deploy Face Recognition Service
 Change directory to the faceRecognitionService directory and deploy the service by running *sls deploy* as shown below:
