@@ -23,7 +23,7 @@ Table of Contents
             * [Setup Twilio Messaging Service](#setup-twilio-messaging-service)
          * [Face Recognition Service](#face-recognition-service)
             * [Deploy Face Recognition Service](#deploy-face-recognition-service)
-      * [Usage:](#usage)
+      * [Usage](#usage)
 
 
 
@@ -258,7 +258,7 @@ Change directory to the faceRecognitionService directory and deploy the service 
 Ensure there are no errors in the deployment process. You can also head on to your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list) and verify that the Lambda functions *faceRecognition-dev-addFace*, *faceRecognition-dev-matchFace* and *faceRecogniton-dev-createCollection* has been created.
 
 ----------
-## Usage:
+## Usage
 The commands in the SMS body should be of the following format.
 
 
