@@ -239,6 +239,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 ### Face Recognition Service
 The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) supports three functions. They are:
+
 > **createCollection**: To add a collection.
 >  **addFace**: To add a face to an existing collection 
 >  **matchFace**: To match a face in a collection and look up the biography of the matched person's name in IMDb.
