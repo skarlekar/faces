@@ -191,6 +191,7 @@ If you get the following message, your Serverless setup is working.
 ### Twilio Communication Service
 The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. The Twilio Messaging service will forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the  Request Processor (*process_request*) Lambda function in the *twilioCommunicationService*.
 
+See the Usage section for the details on how to use this service.
 
 #### Deploy Twilio Communication Service
 Assuming your local Serverless setup is complete and the test above to test your Serverless setup passes, follow the instructions below to deploy the *twilioCommunicationService* using the Serverless framework:
@@ -245,6 +246,8 @@ A *collection* is a logical group of face indexes (face vectors) and their corre
 
 Once you have created a collection you can add faces to the collection using the *addFace* Lambda function. To add a face to a collection, you have to provide an image, a collection name and name you want to associate with the face. If there are no faces in the given image, or if the collection does not exist an error message is returned. The *addFace* function uses AWS Rekognition to detect faces in the given image, extract features from the face and persist information about facial features detected in the image to AWS Rekognition. The facial features are stored as searchable image vectors.
 
+Once you have some faces indexed using the *addFace* function, you can then provide images of the person indexed using the *matchFace* function. The *matchFace* function requires the 
+
 #### Deploy Face Recognition Service
 Change directory to the faceRecognitionService directory and deploy the service by running *sls deploy* as shown below:
 
@@ -255,5 +258,20 @@ Ensure there are no errors in the deployment process. You can also head on to yo
 
 ----------
 ## Usage:
-TO DO: Describe the end-user usage pattern with a snapshots of various commands in use. 
+The commands in the SMS body should be of the following format:
+> To add a new collection:
+> face addcol (collection-name)
+> where *collection-name* is the name of the collection you want to create.
+> Example:
+> face addcol celebs
+![enter image description here](https://github.com/skarlekar/faces/blob/master/example-addcol.png)
+> 
+> 
+> To add an image to a given collection and associate the face in the image to a name:
+> ***face addimg (collection-name) (first-name_last-name)***
+> where *collection-name* is the name of an existing collection and first-name_last-name is the full name of the person. Note that the first name and last name should be separated by an underscore. This command should be accompanied with an image in the same SMS.
+>
+> To match a face in a given collection:
+> ***face match (collection-name)***
+> where *collection-name* is the name of an existing collection. This command must be accompanied with an image in the same SMS.
 
