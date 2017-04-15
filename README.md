@@ -258,19 +258,25 @@ Ensure there are no errors in the deployment process. You can also head on to yo
 
 ----------
 ## Usage:
-The commands in the SMS body should be of the following format:
-> To add a new collection:
-> face addcol (collection-name)
-> where *collection-name* is the name of the collection you want to create.
-> Example:
-> face addcol celebs
+The commands in the SMS body should be of the following format.
+
+To add a new collection, type the following in the SMS body. You don't have to add any image with this command. Any image added will be ignored.
+
+    face addcol (collection-name)
+
+where *collection-name* is the name of the collection you want to create.
+
+Example:
+face addcol celebs
 ![enter image description here](https://github.com/skarlekar/faces/blob/master/example-addcol.png)
-> 
-> 
-> To add an image to a given collection and associate the face in the image to a name:
-> ***face addimg (collection-name) (first-name_last-name)***
-> where *collection-name* is the name of an existing collection and first-name_last-name is the full name of the person. Note that the first name and last name should be separated by an underscore. This command should be accompanied with an image in the same SMS.
->
+
+
+To add an image to a given collection and associate the face in the image to a name, type the following in the body of the SMS. You should include an image in the same SMS message.
+
+    face addimg (collection-name) (first-name_last-name)
+
+where *collection-name* is the name of an existing collection and first-name_last-name is the full name of the person. Note that the first name and last name should be separated by an underscore. 
+
 > To match a face in a given collection:
 > ***face match (collection-name)***
 > where *collection-name* is the name of an existing collection. This command must be accompanied with an image in the same SMS.
