@@ -26,6 +26,7 @@ Table of Contents
       * [Usage:](#usage)
 
 
+
 # **CelebritySleuth**
 A celebrity face recognition service built with [Serverless Framewor## Heading ##k](https://serverless.com/framework/) using [Twilio](https://www.twilio.com/), [Amazon Rekognition](https://aws.amazon.com/rekognition) and [IMDbPy API](http://imdbpy.sourceforge.net/).
 
