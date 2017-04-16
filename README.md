@@ -1,6 +1,7 @@
 Table of Contents
 -----------------
 
+
    * [<strong>CelebritySleuth</strong>](#celebritysleuth)
    * [Audience](#audience)
    * [The <em>CelebritySleuth</em> Application](#the-celebritysleuth-application)
@@ -24,6 +25,10 @@ Table of Contents
          * [Face Recognition Service](#face-recognition-service)
             * [Deploy Face Recognition Service](#deploy-face-recognition-service)
       * [Usage](#usage)
+         * [Add Collection](#add-collection)
+         * [Add Image](#add-image)
+         * [Match Face](#match-face)
+         * [Application in Action:](#application-in-action)
 
 
 
