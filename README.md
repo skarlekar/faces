@@ -267,7 +267,7 @@ Ensure there are no errors in the deployment process. You can also head on to yo
 
 ----------
 ## Usage
-The commands in the SMS body should be of the following format.
+Following are the commands currently supported by *CelebritySleuth*.
 
 
 ----------
