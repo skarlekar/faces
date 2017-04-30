@@ -19,6 +19,7 @@ provider:
 # Defining the handlers here.
 functions:
   processRequest:
+    description: Validates incoming requests and sends a response syncrhonously if the format of the message is in the right format or an error message giving the correct usage.
     handler: process_request.process
     environment:
       TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
@@ -37,6 +38,7 @@ functions:
             template: "#set($inputRoot=$input.path('$'))<Response><Message><Body>$inputRoot</Body></Message></Response>"
 
   sendResponse:
+    description: composes a response from the faceRecognitionService and sends the response back to the number from where the request originated.
     handler: send_response.process
     environment:
       TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
