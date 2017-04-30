@@ -248,7 +248,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 10. Under the *Messaging* section, select *Messaging Service* under the *CONFIGURE WITH* drop-down.
 
-11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *SAVE*.
+11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-8 above and click *SAVE*.
 
 ### Face Recognition Service
 The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) currently supports three functions. They are:
@@ -272,6 +272,78 @@ Change directory to the faceRecognitionService directory and deploy the service 
     $ sls deploy --verbose
 
 Ensure there are no errors in the deployment process. You can also head on to your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list) and verify that the Lambda functions *faceRecognition-dev-addFace*, *faceRecognition-dev-matchFace* and *faceRecogniton-dev-createCollection* has been created.
+
+#### Testing the application
+To test the application, create a collection by send the following SMS message to your Twilio number:
+
+    face addcol celebs
+
+Does it work? Are you getting a message back from yonder? If not why? Look at the CloudWatch logs for your processRequest Lambda function. What is the issue?
+
+If you look carefully you will find that the Lambda functions do not have enough permissions to operate the SNS topic or AWS Rekognition resources.
+
+##### Fixing twilioCommunicationService
+Open the *serverless.yml* file in the *twilioCommunicationService* and uncomment the section *iamRoleStatements*, save and deploy the service again.
+
+    $ cd twilioCommunicationService
+    $ vi serverless.yml
+    $ sls deploy --verbose
+
+Repeat adding a collection again. 
+
+    face addcol celebs
+
+This time, you should get a message saying that you will get a response back momentarily. 
+
+    All good. You should receive your response momentarily!
+
+You can wait till the cows come home, but you are not getting a response are you? 
+
+This is because, you have to provide more permissions to the Lambda functions in the *faceRecognitionService*.
+
+##### Fixing faceRecognitionService
+Open the *serverless.yml* file in the *faceRecognitionService* and uncomment the section *iamRoleStatements*, save and deploy the service again.
+
+    $ cd twilioCommunicationService
+    $ vi serverless.yml
+    $ sls deploy --verbose
+
+That should have fixed it. Now if you add a collection:
+
+    face addcol celebs
+
+You should not only get the following response:
+
+    All good. You should receive your response momentarily!
+
+You should also get the following message:
+
+    Collection celebs was created successfully
+
+##### Adding a face to the collection
+To add a face to the collection, along with an image of the person send the following as part of the same SMS message:
+
+    (image)
+    face addimg celebs firstName_lastName
+
+You should receive the following response:
+
+    Picture of firstName_lastName added to collection celebs
+
+Now find another image of the person and test the face matching power of AWS Rekognition by sending an image and the following commands through SMS to your Twilio number:
+
+    (image)
+    face match celebs
+
+You should not only get the following message:
+
+    All good. You should receive your response momentarily!
+
+You should also receive the following message and biography of the person:
+
+    Face matched firstName lastName with xx.xx similarity and yy.yy confidence.
+
+Followed with the biography of the person.
 
 ----------
 ## Usage
@@ -328,3 +400,6 @@ Example:
 Following is a sample animation of the application in action:
 
 ![sample GIF of the application in action](https://github.com/skarlekar/faces/blob/master/mel.gif)
+
+
+
