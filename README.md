@@ -228,7 +228,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 2. Click on the **+** under Messaging Services with Copilot to add a new Messaging service.
 
-3. Give a name to your service and click on *Create*.
+3. Give a name to your service and click on *Create*. Let us say, *CelebritySleuth*.
 
 4. Under *Properties* in the *USE CASE* drop-down, select *Chat Bot/Interactive 2-way*.
 
