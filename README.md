@@ -224,7 +224,7 @@ Ensure your Twilio credentials are setup as environment variables by clicking on
 #### Setup Twilio Messaging Service
 Follow the instructions below to setup the Messaging Service in Twilio and associate your Twilio number to the Messaging Service:
 
-1. In the Twilio website, login to your account and head to the [Programmable SMS Dashboard](https://www.twilio.com/console/sms/dashboard).
+1. In the Twilio website, login to your account and head to the [Messaging Services](https://www.twilio.com/console/sms/services)
 
 2. Click on the **+** under Messaging Services with Copilot to add a new Messaging service.
 
