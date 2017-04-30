@@ -164,7 +164,10 @@ Now that you have setup AWS, it is time to test your Serverless setup by creatin
 
 Create a test directory. In the test directory, create a Lambda function from the default template as follows:
 
+    $ mkdir sls-tester
+    $ cd sls-tester
     $ sls create --template aws-python --name sls-test
+    
 This should create two files in the current directory:
 
 > serverless.yml
