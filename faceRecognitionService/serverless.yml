@@ -6,6 +6,16 @@ provider:
   runtime: python2.7
   region: us-east-1
   #role: arn:aws:iam::219104658389:role/lambda-s3-execution-role
+  iamRoleStatements: # permissions for all of your functions can be set here
+    - Effect: 'Allow'
+      Action: # Gives permission to SNS topics in a specific region
+        - 'sns:ListTopics'
+        - 'sns:Publish'
+      Resource: "arn:aws:sns:us-east-1:*:*"
+    - Effect: 'Allow'
+      Action: # Gives permission to AWS Rekognition in all regions
+        - 'rekognition:*'
+      Resource: "*"
   timeout: 60
 
 
@@ -22,11 +32,9 @@ functions:
     handler: add_face.process
     events:
       - sns: add_face_request
-      
+
   matchFace:
     description: Match a given face to known faces in an existing collection.
     handler: match_face.process
     events:
       - sns: match_face_request
-
-
