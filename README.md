@@ -244,7 +244,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 10. Under the *Messaging* section, select *Messaging Service* under the *CONFIGURE WITH* drop-down.
 
-11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *Save*.
+11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-7 above and click *SAVE*.
 
 ### Face Recognition Service
 The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) currently supports three functions. They are:
