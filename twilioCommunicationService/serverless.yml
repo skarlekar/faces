@@ -14,7 +14,15 @@ provider:
   # Alternatively, you can omit this and Serverless will create a new role with the appropriate
   # permissions.
   #role: arn:aws:iam::219104658389:role/lambda-s3-execution-role
-  timeout: 60
+  #------------- Uncomment this to unfurl the magic ------------
+  # iamRoleStatements: # permissions for all of your functions can be set here
+  #   - Effect: 'Allow'
+  #     Action: # Gives permission to SNS topics in a specific region
+  #       - 'sns:ListTopics'
+  #       - 'sns:Publish'
+  #     Resource: "arn:aws:sns:us-east-1:*:*"
+  # timeout: 60
+  #----------- End of iamRoleStatements --------------------------
 
 # Defining the handlers here.
 functions:
