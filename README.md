@@ -201,7 +201,9 @@ If you get the following message, your Serverless setup is working.
 ### Twilio Communication Service
 The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. The Twilio Messaging service will forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the  Request Processor (*process_request*) Lambda function in the *twilioCommunicationService*.
 
-See the [Usage](https://github.com/skarlekar/faces#usage) section for the details on how to use this service.
+The *TwilioCommunicationService* supports two functions:
+1. The *processRequest* function validates incoming requests and sends a response syncrhonously if the format of the message is in the right format or an error message giving the correct usage. See the [Usage](https://github.com/skarlekar/faces#usage) section for the details on how to use this service.
+2. The *sendResponse* function composes a response from the *faceRecognitionService* and sends the response back to the number from where the request originated.
 
 #### Deploy Twilio Communication Service
 Assuming your local Serverless setup is complete and the test above to test your Serverless setup passes, follow the instructions below to deploy the *twilioCommunicationService* using the Serverless framework:
