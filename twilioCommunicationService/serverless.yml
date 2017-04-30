@@ -13,7 +13,7 @@ provider:
   # Pre-existing role is used here with the appropriate permissions already granted.
   # Alternatively, you can omit this and Serverless will create a new role with the appropriate
   # permissions.
-  role: arn:aws:iam::219104658389:role/lambda-s3-execution-role
+  #role: arn:aws:iam::219104658389:role/lambda-s3-execution-role
   timeout: 60
 
 # Defining the handlers here.
