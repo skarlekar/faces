@@ -137,6 +137,7 @@ If you do not already have a Twilio number, [signup](https://www.twilio.com/try-
 #### Setup Twilio Environment Variables
 Update the *setTwilio.sh* in the repository with your credentials from Twilio and setup your environment. Instructions on using *vi* is [here](https://www.howtoforge.com/faq/how-to-edit-files-on-the-command-line).
 
+    $ cd faces
     $ vi setTwilio.sh
     $ source ./setTwilio.sh
 
