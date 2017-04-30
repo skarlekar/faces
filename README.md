@@ -236,7 +236,9 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 5. In the *Inbound Settings* section, ensure *PROCESS INBOUND MESSAGES* is checked.
 
-6. Copy and paste the [AWS API Gateway URL](https://github.com/skarlekar/faces/blob/master/aws-api-gateway-screenshot.png) from your AWS console into the *REQUEST URL* field and select HTTP GET in the drop-down next to the field.  
+6. Copy and paste the [AWS API Gateway URL](https://github.com/skarlekar/faces/blob/master/aws-api-gateway-screenshot.png) from your AWS console into the *REQUEST URL* field and add */process_request* to the end of the URL.  Your URL should resemble: https://netxnasdfda.execute-api.us-east-1.amazonaws.com/dev/process_request
+
+7. Select HTTP GET in the drop-down next to the field.  
 
 7. Leave rest of the fields to its default value and click *SAVE*.
 
