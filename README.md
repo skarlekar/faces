@@ -203,7 +203,7 @@ The Twilio Communication Service [twilioCommunicationService](https://github.com
 
 The *TwilioCommunicationService* supports two functions:
 1. The *processRequest* function validates incoming requests and sends a response syncrhonously if the format of the message is in the right format or an error message giving the correct usage. See the [Usage](https://github.com/skarlekar/faces#usage) section for the details on how to use this service.
-2. The *sendResponse* function composes a response from the *[faceRecognitionService](https://github.com/skarlekar/faces#face-recognition-service)* and sends the response back to the number from where the request originated.
+2. The *sendResponse* function composes a response from the [faceRecognitionService](https://github.com/skarlekar/faces#face-recognition-service) and sends the response back to the number from where the request originated.
 
 #### Deploy Twilio Communication Service
 Assuming your local Serverless setup is complete and the test above to test your Serverless setup passes, follow the instructions below to deploy the *twilioCommunicationService* using the Serverless framework:
