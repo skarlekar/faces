@@ -30,7 +30,10 @@ def detect_face(client, file):
     try:
         image_bytes = get_bytes(file)
         response = client.detect_faces(Image={'Bytes': image_bytes})
-    except Exception:
+    except Exception as e:
+        print ("Following error was raised:")
+        print (e)
+        print ("----------------------------")
         response = None
 
     if (response is not None):
