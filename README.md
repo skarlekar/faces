@@ -236,7 +236,7 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 6. Copy and paste the [AWS API Gateway URL](https://github.com/skarlekar/faces/blob/master/aws-api-gateway-screenshot.png) from your AWS console into the *REQUEST URL* field and select HTTP GET in the drop-down next to the field.  
 
-7. Leave rest of the fields to its default value.
+7. Leave rest of the fields to its default value and click *SAVE*.
 
 8. Head to the [Numbers](https://www.twilio.com/console/phone-numbers/incoming) section in the Twilio console.
 
