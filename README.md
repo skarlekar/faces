@@ -339,11 +339,12 @@ You should not only get the following message:
 
     All good. You should receive your response momentarily!
 
-You should also receive the following message and biography of the person:
+You should also receive the following message and biography of the person followed with the biography of the person.
 
     Face matched firstName lastName with xx.xx similarity and yy.yy confidence.
+    ....
+    ....
 
-Followed with the biography of the person.
 
 ----------
 ## Usage
