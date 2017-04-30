@@ -198,6 +198,10 @@ If you get the following message, your Serverless setup is working.
         "statusCode": 200
     }
 
+
+----------
+
+
 ### Twilio Communication Service
 The Twilio Communication Service [twilioCommunicationService](https://github.com/skarlekar/faces/tree/master/twilioCommunicationService) bridges Twilio's SMS messaging service with the Face Recognition Service. When the user sends a message to his/her Twilio number, the message is intercepted by Twilio's Messaging service. The Twilio Messaging service will forward the SMS message contents to AWS API Gateway URL. The AWS API Gateway in turn will invoke the  Request Processor (*process_request*) Lambda function in the *twilioCommunicationService*.
 
@@ -250,6 +254,10 @@ Follow the instructions below to setup the Messaging Service in Twilio and assoc
 
 11. In the *MESSAGING SERVICE*, select the Messaging service that created in steps 2-8 above and click *SAVE*.
 
+
+----------
+
+
 ### Face Recognition Service
 The Face Recognition Service ([faceRecognitionService](https://github.com/skarlekar/faces/tree/master/faceRecognitionService)) currently supports three functions. They are:
 
@@ -273,7 +281,11 @@ Change directory to the faceRecognitionService directory and deploy the service 
 
 Ensure there are no errors in the deployment process. You can also head on to your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list) and verify that the Lambda functions *faceRecognition-dev-addFace*, *faceRecognition-dev-matchFace* and *faceRecogniton-dev-createCollection* has been created.
 
-#### Testing the application
+
+----------
+
+
+### Testing the application
 To test the application, create a collection by send the following SMS message to your Twilio number:
 
     face addcol celebs
@@ -282,7 +294,7 @@ Does it work? Are you getting a message back from yonder? If not why? Look at th
 
 If you look carefully you will find that the Lambda functions do not have enough permissions to operate the SNS topic or AWS Rekognition resources.
 
-##### Fixing twilioCommunicationService
+#### Fixing twilioCommunicationService
 Open the *serverless.yml* file in the *twilioCommunicationService* and uncomment the section *iamRoleStatements*, save and deploy the service again.
 
     $ cd twilioCommunicationService
@@ -301,7 +313,7 @@ You can wait till the cows come home, but you are not getting a response are you
 
 This is because, you have to provide more permissions to the Lambda functions in the *faceRecognitionService*.
 
-##### Fixing faceRecognitionService
+#### Fixing faceRecognitionService
 Open the *serverless.yml* file in the *faceRecognitionService* and uncomment the section *iamRoleStatements*, save and deploy the service again.
 
     $ cd twilioCommunicationService
@@ -320,7 +332,7 @@ You should also get the following message:
 
     Collection celebs was created successfully
 
-##### Adding a face to the collection
+#### Adding a face to the collection
 To add a face to the collection, along with an image of the person send the following as part of the same SMS message:
 
     (image)
@@ -329,6 +341,8 @@ To add a face to the collection, along with an image of the person send the foll
 You should receive the following response:
 
     Picture of firstName_lastName added to collection celebs
+
+#### Matching a face in the collection
 
 Now find another image of the person and test the face matching power of AWS Rekognition by sending an image and the following commands through SMS to your Twilio number:
 
@@ -351,7 +365,7 @@ You should also receive the following message and biography of the person follow
 Following are the commands currently supported by *CelebritySleuth*.
 
 
-----------
+
 ### Add Collection
 
 To add a new collection, type the following in the SMS body. You don't have to add any image with this command. Any image added will be ignored.
