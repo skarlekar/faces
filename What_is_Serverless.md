@@ -3,9 +3,13 @@
 
 **Serverless Architecture vs. Serverless Framework**
 ====================================================
-Per Gartner, by 2022 most cloud architectures will evolve to a fundamentally serverless model rendering the cloud platform architectures dominating in 2017 as legacy architectures. 
+Per Gartner, by 2022 most cloud architectures will evolve to a fundamentally serverless model rendering the cloud platform architectures dominating in 2017 as legacy architectures.
+ 
+Serverless is a cloud-native platform model and reflects the core-promise of cloud-computing by offering agility and capability on demand at a value price. 
 
-Serverless architecture reflects the core-promise of cloud-computing by offering agility and capability on demand at a value price. It will be at your best interest to understand this technology, the evolving eco-system and how to harness it as it provides high productivity at low cost.
+The introduction of function PaaS (fPaaS) as Lambda by Amazon in re:Invent, Nov 2014 (and out of beta in late 2015) created a momentum for "serverless" platform architecture. AWS Lambda was soon followed by most major cloud platform vendors, including IBM, Microsoft, Google and, more recently, Oracle.  
+
+    Amazon started the trend with Lambda
 
 Separating the Wheat from the Chaff
 -----------------------------------
@@ -15,9 +19,11 @@ Serverless computing model is an emerging trend and quite often misunderstood be
 The term *[Serverless](https://martinfowler.com/articles/serverless.html)* refers to building applications without having to configure or maintain infrastructure required for running your applications. In reality, servers are still involved, though they are owned and controlled by the platform providers. On the other hand there are frameworks used for exploiting the serverless architecture uninspiringly named *[Serverless Framework](https://serverless.com/)* increasing the confusion.
  
 
+    Serverless - No need to configure or maintain infrastructure
+
 Serverless Architectures
 ------------------------
- Serverless Architectures are those where the applications logic provided by the Developer is run on stateless, compute containers that are provisioned and managed by a provider. Typically these compute instances are ephemeral (short-lived for the duration of the request-response cycle) and triggered through an event. Due to the on-demand provisioning nature of this architecture, the systems built using Serverless technologies are inherently scaleable and highly responsive under load. 
+Serverless Architectures are based on models where the applications logic provided by the Developer is run on stateless, compute containers that are provisioned and managed by a provider. Typically these compute instances are ephemeral (short-lived for the duration of the request-response cycle) and triggered through an event. Due to the on-demand provisioning nature of this architecture, the systems built using Serverless technologies are inherently scaleable and highly responsive under load. 
 
 **FaaS vs PaaS**
 
@@ -27,19 +33,19 @@ The other key operational difference between FaaS and PaaS is scaling. With most
 
 > **Limitations of FaaS**
 > 
-> *State* Due to the ephemeral nature of the FaaS architecture, the state of your application should be managed externally from the FaaS
+> ***State*** Due to the ephemeral nature of the FaaS architecture, the state of your application should be managed externally from the FaaS
 > infrastructure or off-loaded to a cache or data-base. This could be
 > very limiting for certain type of applications running on thin clients
 > or untrusted devices where the application orchestration has to extend
 > through multiple request-response cycles.
 > 
-> *Duration* Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
+> ***Duration*** Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
 > are allowed to run.  To keep the price low - as you are billed by
 > minutes of usage, some providers such as Amazon AWS and Microsoft
 > Azure restrict the duration of time a function is allowed to process a
 > request.  
 > 
-> *Deployment & Resource Limits* Some providers such as AWS have [deployment
+> ***Deployment & Resource Limits*** Some providers such as AWS have [deployment
 > limits](http://docs.aws.amazon.com/lambda/latest/dg/limits.html) on
 > the size of the deployment package, size of the code and libraries
 > that can be deployed in the package. This could be severely limiting
@@ -51,7 +57,7 @@ The other key operational difference between FaaS and PaaS is scaling. With most
 > working with the providers, others are hard limits and will force you
 > to reevaluate the choice of your design.
 > 
-> *Latency*  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
+> ***Latency***  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
 > that require a long start time to spin up JVMs may encounter longer
 > runtime. Having said that, providers optimize the infrastructure
 > spin-ups based on the usage patterns of the functions. Due to the
@@ -72,5 +78,6 @@ To avoid vendor lock-in and allow to deploy your FaaS solutions to various provi
 The Serverless Framework allows you to provision and deploy a REST API, data pipe-line, or other uses cases by providing you a CLI to manage and build a serverless architecture by abstracting away provider-level complexity. 
 
 The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers.
+
 
 
