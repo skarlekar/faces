@@ -25,6 +25,7 @@ Serverless Architectures
 ------------------------
 Serverless Architectures are based on models where the applications logic provided by the Developer is run on stateless, compute containers that are provisioned and managed by a provider. Typically these compute instances are ephemeral (short-lived for the duration of the request-response cycle) and triggered through an event. Due to the on-demand provisioning nature of this architecture, the systems built using Serverless technologies are inherently scaleable and highly responsive under load. 
 
+
 **FaaS - Function as a Service **
 
 The technique of building applications using Serverless architecture.
