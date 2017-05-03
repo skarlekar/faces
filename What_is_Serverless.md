@@ -25,6 +25,16 @@ Serverless Architectures
 ------------------------
 Serverless Architectures are based on models where the applications logic provided by the Developer is run on stateless, compute containers that are provisioned and managed by a provider. Typically these compute instances are ephemeral (short-lived for the duration of the request-response cycle) and triggered through an event. Due to the on-demand provisioning nature of this architecture, the systems built using Serverless technologies are inherently scaleable and highly responsive under load. 
 
+**FaaS - Function as a Service **
+![enter image description here](https://github.com/skarlekar/faces/blob/master/Faas.png)
+The technique of building applications using Serverless architecture.
+>- **Pay-per-execution** - Pay per execution model is most efficient at managing costs.
+> - **Ephemeral** – Short-lived process triggered via event.
+> - **Auto-scaling** – Compute resources are provisioned granularly per request.
+> - **Event-driven** – Functions respond to events such as http, file drop, alerts, timer, topics etc
+> - **Microservices** – Modules built to satisfy a specific goal and uses a simple, well-defined interface. 
+
+
 **FaaS vs PaaS**
 
 Some people in the industry refer to the technique of building applications using Serverless architecture as FaaS (Function as a Service). The reason becomes clear when you contrast FaaS applications with the traditionally built applications or PaaS (Platform as a Service) where there is a perpetual process running on a server waiting for HTTP requests or API calls. In FaaS there is no perpetual process (for the most part) but an event mechanism that triggers the execution of a piece of code, usually just a function. You still need a perpetual gateway that will field your API calls to start the events to cascade.  
