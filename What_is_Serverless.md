@@ -76,7 +76,7 @@ The other key operational difference between FaaS and PaaS is scaling. With most
  working with the providers, others are hard limits and will force you
  to reevaluate the choice of your design.
 
-    Resources are limited - Use wisely
+    `Resources are limited - Use wisely`
 
  ***Latency***  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
  that require a long start time to spin up JVMs may encounter longer
@@ -110,7 +110,9 @@ The Serverless Framework is different than other application frameworks because:
 - It manages your code as well as your infrastructure
 - It supports multiple languages (Node.js, Python, Java, and more)
 
+
     Serverless framework allows choice of FaaS providers across a single project
+
 
 ** Core concepts of Serverless Framework **
 Serverless Framework consists of the following core concepts:
@@ -120,4 +122,6 @@ Serverless Framework consists of the following core concepts:
 - Events
 - Resources 
 - Plugins
+
+
 
