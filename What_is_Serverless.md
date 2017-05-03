@@ -26,14 +26,18 @@ Serverless Architectures
 Serverless Architectures are based on models where the applications logic provided by the Developer is run on stateless, compute containers that are provisioned and managed by a provider. Typically these compute instances are ephemeral (short-lived for the duration of the request-response cycle) and triggered through an event. Due to the on-demand provisioning nature of this architecture, the systems built using Serverless technologies are inherently scaleable and highly responsive under load. 
 
 **FaaS - Function as a Service **
-![enter image description here](https://github.com/skarlekar/faces/blob/master/Faas.png)
+
 The technique of building applications using Serverless architecture.
+
+![enter image description here](https://github.com/skarlekar/faces/blob/master/Faas.png)
+
 >- **Pay-per-execution** - Pay per execution model is most efficient at managing costs.
 > - **Ephemeral** – Short-lived process triggered via event.
 > - **Auto-scaling** – Compute resources are provisioned granularly per request.
 > - **Event-driven** – Functions respond to events such as http, file drop, alerts, timer, topics etc
 > - **Microservices** – Modules built to satisfy a specific goal and uses a simple, well-defined interface. 
 
+    FaaS – Applications Built with Serverless Architecture
 
 **FaaS vs PaaS**
 
@@ -49,12 +53,16 @@ The other key operational difference between FaaS and PaaS is scaling. With most
 > or untrusted devices where the application orchestration has to extend
 > through multiple request-response cycles.
 > 
+>`State between Requests must be maintained outside of FaaS`
+>
 > ***Duration*** Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
 > are allowed to run.  To keep the price low - as you are billed by
 > minutes of usage, some providers such as Amazon AWS and Microsoft
 > Azure restrict the duration of time a function is allowed to process a
 > request.  
 > 
+> `Duration of time a function is allowed to run is restricted`
+>
 > ***Deployment & Resource Limits*** Some providers such as AWS have [deployment
 > limits](http://docs.aws.amazon.com/lambda/latest/dg/limits.html) on
 > the size of the deployment package, size of the code and libraries
@@ -88,6 +96,7 @@ To avoid vendor lock-in and allow to deploy your FaaS solutions to various provi
 The Serverless Framework allows you to provision and deploy a REST API, data pipe-line, or other uses cases by providing you a CLI to manage and build a serverless architecture by abstracting away provider-level complexity. 
 
 The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers.
+
 
 
 
