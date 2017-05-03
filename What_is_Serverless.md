@@ -46,58 +46,78 @@ Some people in the industry refer to the technique of building applications usin
 
 The other key operational difference between FaaS and PaaS is scaling. With most PaaS solutions you still need to worry about scale. With FaaS the compute resources are provisioned at a request level. You cannot get the same level of granularity with PaaS applications even if you set it to auto-scale. As a result of this, FaaS applications are extremely efficient when it comes to managing cost.
 
-> **Limitations of FaaS**
-> 
-> ***State*** Due to the ephemeral nature of the FaaS architecture, the state of your application should be managed externally from the FaaS
-> infrastructure or off-loaded to a cache or data-base. This could be
-> very limiting for certain type of applications running on thin clients
-> or untrusted devices where the application orchestration has to extend
-> through multiple request-response cycles.
-> 
->`State between Requests must be maintained outside of FaaS`
->
-> ***Duration*** Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
-> are allowed to run.  To keep the price low - as you are billed by
-> minutes of usage, some providers such as Amazon AWS and Microsoft
-> Azure restrict the duration of time a function is allowed to process a
-> request.  
-> 
-> `Duration of time a function is allowed to run is restricted`
->
-> ***Deployment & Resource Limits*** Some providers such as AWS have [deployment
-> limits](http://docs.aws.amazon.com/lambda/latest/dg/limits.html) on
-> the size of the deployment package, size of the code and libraries
-> that can be deployed in the package. This could be severely limiting
-> for some applications such as image processing functions that depend
-> on large libraries that have to be packaged along with the code.
-> Additionally, there are limits on the number of concurrent function
-> executions, ephemeral disk capacity (temp space) etc. While some of
-> these limits are soft limits and can be reconfigured per function by
-> working with the providers, others are hard limits and will force you
-> to reevaluate the choice of your design.
-> 
-> ***Latency***  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
-> that require a long start time to spin up JVMs may encounter longer
-> runtime. Having said that, providers optimize the infrastructure
-> spin-ups based on the usage patterns of the functions. Due to the
-> interpreted nature of Python and Javascript, functions written in
-> these languages may not see a significant difference in latency
-> between a PaaS and FaaS offering.
+ **Limitations of FaaS**
+ 
+***State*** Due to the ephemeral nature of the FaaS architecture, the state of your application should be managed externally from the FaaS
+ infrastructure or off-loaded to a cache or data-base. This could be
+ very limiting for certain type of applications running on thin clients
+ or untrusted devices where the application orchestration has to extend
+ through multiple request-response cycles.
+ 
+`State between Requests must be maintained outside of FaaS`
+
+ ***Duration*** Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
+ are allowed to run.  To keep the price low - as you are billed by
+ minutes of usage, some providers such as Amazon AWS and Microsoft
+ Azure restrict the duration of time a function is allowed to process a
+ request.  
+ 
+ `Duration of time a function is allowed to run is restricted`
+
+ ***Deployment & Resource Limits*** Some providers such as AWS have [deployment
+ limits](http://docs.aws.amazon.com/lambda/latest/dg/limits.html) on
+ the size of the deployment package, size of the code and libraries
+ that can be deployed in the package. This could be severely limiting
+ for some applications such as image processing functions that depend
+ on large libraries that have to be packaged along with the code.
+ Additionally, there are limits on the number of concurrent function
+ executions, ephemeral disk capacity (temp space) etc. While some of
+ these limits are soft limits and can be reconfigured per function by
+ working with the providers, others are hard limits and will force you
+ to reevaluate the choice of your design.
+
+    Resources are limited - Use wisely
+
+ ***Latency***  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
+ that require a long start time to spin up JVMs may encounter longer
+ runtime. Having said that, providers optimize the infrastructure
+ spin-ups based on the usage patterns of the functions. Due to the
+ interpreted nature of Python and Javascript, functions written in
+ these languages may not see a significant difference in latency
+ between a PaaS and FaaS offering.
+
+    Test the performance of your applications thoroughly
 
 **The Players**
 
-While there are new providers entering the market to exploit the Serverless wave, the dominant players are Amazon with its AWS Lambda, Microsoft with its Azure Functions, Google with its Google Functions and Apache with its Openwhisk rule the roost with AWS Lambda being the dominant player.
+While there are new providers entering the market to exploit the Serverless wave, the significant players are Amazon with its AWS Lambda, Microsoft with its Azure Functions, Google with its Google Functions and IBM with its Openwhisk rule the roost with AWS Lambda being the dominant player.
+
+    Amazon's AWS Lambda is the dominant player
 
 Serverless Framework
 --------------------
-While the Serverless architecture unbinds you the Developer from having to provision and manage the resources for the bulk of your compute needs you are still bound to idiosyncrasies of the provider when it comes to their FaaS offering. Not only do you have to learn the different terminologies used by the various providers, you will have to learn how to use their offerings on their respective consoles or CLI (Command Line Interface).
+While not having to manage infrastructure by using serverless functions is nice, having to deal with hundreds of functions in a project between multiple providers, managing buckets, messaging and permissions becomes an issue in itself. Additionally, organizations want to diversify risk and hence do not want to be bound to a single provider. 
+
+Add to this mix the idiosyncrasies of the provider when it comes to their FaaS offering. Not only do you have to learn the different terminologies used by the various providers, you will have to learn how to use their offerings on their respective consoles or CLI (Command Line Interface).
 
 To avoid vendor lock-in and allow to deploy your FaaS solutions to various providers, [Serverless Framework](https://serverless.com/) comes to your rescue. The Serverless Framework allows you to deploy auto-scaling, pay-per-execution, event-driven functions to any cloud. They currently support [AWS Lambda](https://aws.amazon.com/lambda), [IBM Bluemix OpenWhisk](https://developer.ibm.com/openwhisk/), [Microsoft Azure](https://azure.microsoft.com/en-us/services/functions), and are expanding to support other cloud providers.
 
-The Serverless Framework allows you to provision and deploy a REST API, data pipe-line, or other uses cases by providing you a CLI to manage and build a serverless architecture by abstracting away provider-level complexity. 
+The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers and provides robust plugins for various FaaS providers and allows to extend it when needed.
 
-The Serverless Framework is an MIT open-source project, actively maintained by a vibrant and engaged community of developers.
+The Serverless Framework allows you to provision and deploy REST APIs, backend services, data pipe-lines, and other uses cases by providing a framework and CLI to build serverless services across many providers by abstracting away provider-level complexity.
 
+The Serverless Framework is different than other application frameworks because:
+- It manages your code as well as your infrastructure
+- It supports multiple languages (Node.js, Python, Java, and more)
 
+    Serverless framework allows choice of FaaS providers across a single project
 
+** Core concepts of Serverless Framework **
+Serverless Framework consists of the following core concepts:
+
+- Service
+- Function
+- Events
+- Resources 
+- Plugins
 
