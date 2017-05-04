@@ -255,7 +255,7 @@ The above picture illustrates the high-level architecture of the application. De
 
 The application consists of the following components:
 1. Python - Python is a programming language that lets you work quickly
-and integrate systems more effectively. We will use Python 2.7 for building the *CelebritySleuth* Application.
+and integrate systems more effectively. 
 
 2. Twilio - Twilio Messaging Service for having the user communicate with the application through SMS. 
 
@@ -264,6 +264,10 @@ and integrate systems more effectively. We will use Python 2.7 for building the 
 4. AWS Rekognition - Amazon Rekognition is a service that makes it easy to add image analysis to your applications. With Rekognition, you can detect objects, scenes, and faces in images. You can also search and compare faces.
 
 5. IMDb - IMDbPY is a Python package useful to retrieve and manage the data of the IMDb movie database about movies, people, characters and companies.
+
+**Screenshots**
+
+![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/images/ApplicationScreenShots.png)
 
 Conclusion
 ----------
