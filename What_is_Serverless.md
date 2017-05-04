@@ -158,3 +158,71 @@ Upon deployment, the framework will deploy any infrastructure required for an ev
 
 ![enter image description here](https://github.com/skarlekar/faces/blob/master/images/event-yml.png)
 
+**Resources**
+Resources are infrastructure components which your Functions uses. 
+If you use AWS as you provider, then resources are:
+
+ - An AWS DynamoDB Table (e.g., for saving Users/Posts/Comments data) 
+ - An AWS S3 Bucket (e.g., for saving images or files) 
+ - An AWS SNS Topic (e.g., for sending messages asynchronously)
+
+Anything that can be defined in CloudFormation is supported by the Serverless Framework. The Serverless Framework not only deploys your Functions and the Events that trigger them, but it also deploys the infrastructure components your Functions depend upon.
+
+![enter image description here](https://github.com/skarlekar/faces/blob/master/images/resource-yml.png)
+
+**Credentials**
+Serverless Framework needs access to your cloud provider account credentials to deploy resources on your behalf.  For AWS you can use AWS CLI (aws configure).  Azure is more involved. 
+
+Following links provide excellent guidance on setting up the credentials for various providers currently supported on the Serverless Framework.
+
+- AWS - https://serverless.com/framework/docs/providers/aws/guide/credentials/
+- Azure -https://serverless.com/framework/docs/providers/azure/guide/credentials/
+- Openwhisk - https://serverless.com/framework/docs/providers/openwhisk/guide/credentials/
+
+**Deployment**
+Serverless Framework translates the service declaration in the serverless.yml file into a Cloud Formation or Resource Manager template depending upon the provider you choose.
+
+To deploy your service,  all the functions and provision the resources, enter:
+
+    serverless deploy --verbose
+
+To deploy a single function after making changes to it, enter:
+
+    serverless deploy function --function <myfunction> --verbose
+
+**Invoking**
+Serverless Framework translates the service declaration in the serverless.yml file into a Cloud Formation or Resource Manager template depending upon the provider you choose.
+
+To deploy your service,  all the functions and provision the resources, enter:
+
+    serverless deploy --verbose
+
+To deploy a single function after making changes to it, enter:
+
+    serverless deploy function --function <myfunction> --verbose
+
+CelebritySleuth - A Sample Usecase
+---------------
+
+CelebritySleuth is a celebrity face recognition service built using Serverless Framework, Twilio, Amazon Rekognition and IMDbPy API.
+
+The CelebritySleuth application is an event-driven application taking advantage of:
+The user's mobile SMS/MMS for the presentation tier, 
+Twilio in the middle-tier to bridge the SMS world and 
+AWS Gateway and a set of AWS Lambda functions written in Python making use of AWS Rekogniton for image processing and IMDB for gathering information on the celebrities.
+
+CelebritySleuth code repository, installation guide and usage at:
+https://github.com/skarlekar/faces
+
+**How it works**
+To begin with you have to train the application to recognize the faces by building a collection of celebrities. You do this by sending a random sample of celebrity pictures (image URLs) and their corresponding names. The more pictures of a celebrity, the more accurate the recognition will be.
+The CelebritySleuth application consists of two services:
+
+ - Twilio Communication Service 
+ - Face Recognition Service
+
+The services are decoupled to allow for using different presentation tiers in future.
+
+**Architecture**
+![enter image description here](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
+
