@@ -54,7 +54,8 @@ The other key operational difference between FaaS and PaaS is scaling. With most
  or untrusted devices where the application orchestration has to extend
  through multiple request-response cycles.
  
-`State between Requests must be maintained outside of FaaS`
+
+    State between Requests must be maintained outside of FaaS
 
  ***Duration*** Because of the on-demand provisioning and low-cost nature of the FaaS solution there is a restriction on how long your functions
  are allowed to run.  To keep the price low - as you are billed by
@@ -62,7 +63,8 @@ The other key operational difference between FaaS and PaaS is scaling. With most
  Azure restrict the duration of time a function is allowed to process a
  request.  
  
- `Duration of time a function is allowed to run is restricted`
+
+     Duration of time a function is allowed to run is restricted
 
  ***Deployment & Resource Limits*** Some providers such as AWS have [deployment
  limits](http://docs.aws.amazon.com/lambda/latest/dg/limits.html) on
@@ -76,7 +78,7 @@ The other key operational difference between FaaS and PaaS is scaling. With most
  working with the providers, others are hard limits and will force you
  to reevaluate the choice of your design.
 
-    `Resources are limited - Use wisely`
+    Resources are limited - Use wisely
 
  ***Latency***  Due to the on-demand provisioning nature of the FaaS infrastructure, applications that uses languages such as Java/Scala
  that require a long start time to spin up JVMs may encounter longer
@@ -110,11 +112,10 @@ The Serverless Framework is different than other application frameworks because:
 - It manages your code as well as your infrastructure
 - It supports multiple languages (Node.js, Python, Java, and more)
 
-
     Serverless framework allows choice of FaaS providers across a single project
 
 
-** Core concepts of Serverless Framework **
+**Core concepts of Serverless Framework**
 Serverless Framework consists of the following core concepts:
 
 - Service
@@ -123,5 +124,37 @@ Serverless Framework consists of the following core concepts:
 - Resources 
 - Plugins
 
+**Service**
+A Service in the Serverless Framework is the unit of organization. It's where you define your Functions, the Events that trigger them, and the Resources your Functions use, all in one file titled *serverless.yml*. More information at: https://goo.gl/9SKBvx
 
+An application can have multiple services and hence multiple *serverless.yml* files.
+
+![enter image description here](https://github.com/skarlekar/faces/blob/master/images/service-yml.png)
+
+**Functions**
+A Function is an independent unit of deployment or microservice. It manifests itself as a Lambda or Azure Function depending upon the provider.  It's merely code, deployed in the cloud, that is most often written to perform a single job such as:
+
+- Saving a user to the database
+- Processing a file in a database
+- Performing a scheduled task
+
+![enter image description here](https://github.com/skarlekar/faces/blob/master/images/function-yml.png)
+
+**Events**
+Anything that triggers an Function to execute is regarded by the Framework as an Event. 
+Events on AWS are:
+
+- An AWS API Gateway HTTP endpoint request (e.g., for a REST API)
+- An AWS S3 bucket upload (e.g., for an image)
+- A CloudWatch timer (e.g., run every 5 minutes)
+- An AWS SNS topic (e.g., a message)
+- A CloudWatch Alert (e.g., something happened)
+
+When you define an event for your functions in the Serverless Framework, the Framework will automatically create any infrastructure necessary for that event (e.g., an API Gateway endpoint) and configure your Functions to listen to it.
+
+Simply put, events are the things that trigger your functions to run. If you are using AWS as your provider, all events in the service are anything in AWS that can trigger an AWS Lambda function, like an S3 bucket upload, an SNS topic, and HTTP endpoints created via API Gateway.
+
+Upon deployment, the framework will deploy any infrastructure required for an event (e.g., an API Gateway endpoint) and configure your function to listen to it.
+
+![enter image description here](https://github.com/skarlekar/faces/blob/master/images/event-yml.png)
 
