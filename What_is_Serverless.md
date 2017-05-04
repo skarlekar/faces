@@ -270,4 +270,8 @@ Conclusion
 
 Serverless Framework is an accelerator for adopting Serverless architecture. It promises significantly less DevOps, lower cost, high scalability and multiple deployment options across a variety of providers.
 
-I could not deploy the CelebritySleuth application on 
+Apart from providing a scaffolding to deploy Lambdas the Serverless Framework allows you to manage multiple Lambdas, manage related infrastructure across multiple regions and stages. To top it off, it allows you to manage the equivalent of Lambda functions across multiple providers.
+
+In my testing, I could not deploy the CelebritySleuth application on Microsoft Azure because the Serverless Framework does not currently support deploying functions written in Python. Although, in speaking to Austin Collins the founder of Serverless Framework at the Serverless Conf 2017 in Austin, I gather that his team his working on providing support to as many languages as supported by the cloud providers.
+
+Asides from this, I was able to build the *CelebritySleuth* application from start to end in couple of hours using the Serverless Framework compared to half-a-day for setting up the components manually through AWS console.
