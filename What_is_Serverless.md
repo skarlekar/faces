@@ -211,7 +211,7 @@ The user's mobile SMS/MMS for the presentation tier,
 Twilio in the middle-tier to bridge the SMS world and 
 AWS Gateway and a set of AWS Lambda functions written in Python making use of AWS Rekogniton for image processing and IMDB for gathering information on the celebrities.
 
-CelebritySleuth code repository, installation guide and usage at:
+CelebritySleuth code repository, installation guide and usage is at:
 https://github.com/skarlekar/faces
 
 **How it works**
@@ -224,5 +224,50 @@ The CelebritySleuth application consists of two services:
 The services are decoupled to allow for using different presentation tiers in future.
 
 **Architecture**
-![enter image description here](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
+The *CelebritySleuth* application uses Lambda functions for compute needs. As a result the application components are provisioned just before usage and brought down after use resulting in a low-cost, highly-scalable application.
 
+![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/CelebritySleuthArchitecture.png)
+
+The above picture illustrates the high-level architecture of the application. Details are as follows:
+
+1. User sends a picture and commands to add/match face to a collection. Alternatively, the user can create a collection – in which case a picture is not required. The SMS/MMS is sent to a telephone number hosted by Twilio.
+
+2. Twilio intercepts the message and forwards it to an API Gateway based on the user’s Twilio configuration.
+
+3. API Gateway translates TwiML to JSON and calls the Request Processor lambda function.
+
+4. The Request Processor lambda validates the commands and put a message to the appropriate topic on SNS. If the validation fails, it returns the error message to the user via Twilio.
+
+5. When a message arrives in the Create Collection topic, a lambda is triggered which adds the named collection in AWS Rekognition via Boto libraries. A success/error message is put in the Response Processor topic.
+
+6. When a message arrives in Add Face topic, a lambda is triggered which identifies  the most prominent face in the image and adds the metadata for the face to the given collection. If there is no faces identified, it creates an error message and sends the response to the Response Processor topic.
+
+7. When a message arrives in Match Face topic, a lambda is triggered which identifies the most prominent face in the image and matches the metadata for that face with known faces in the collection. If a match is found, the corresponding person’s name is returned. The Lambda then uses IMDB to lookup the biography of the person.
+
+8. The various lambda-based processors drops the response message on the Response Processor topic.
+
+9. The Response Processor picks up the response and constructs a SMS message and calls Twilio’s SMS service.
+
+10. Twilio validates the From number and sends the message to the corresponding To number. 
+
+
+**Components**
+
+The application consists of the following components:
+1. Python - Python is a programming language that lets you work quickly
+and integrate systems more effectively. We will use Python 2.7 for building the *CelebritySleuth* Application.
+
+2. Twilio - Twilio Messaging Service for having the user communicate with the application through SMS. 
+
+3. AWS Lambda - AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
+
+4. AWS Rekognition - Amazon Rekognition is a service that makes it easy to add image analysis to your applications. With Rekognition, you can detect objects, scenes, and faces in images. You can also search and compare faces.
+
+5. IMDb - IMDbPY is a Python package useful to retrieve and manage the data of the IMDb movie database about movies, people, characters and companies.
+
+Conclusion
+----------
+
+Serverless Framework is an accelerator for adopting Serverless architecture. It promises significantly less DevOps, lower cost, high scalability and multiple deployment options across a variety of providers.
+
+I could not deploy the CelebritySleuth application on 
