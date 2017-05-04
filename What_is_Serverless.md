@@ -269,7 +269,11 @@ and integrate systems more effectively.
 
 ![Celebrity Sleuth Architecture](https://github.com/skarlekar/faces/blob/master/images/ApplicationScreenShots.png)
 
-![enter image description here](https://github.com/skarlekar/faces/blob/master/example-mel-gibson-match_720.mp4)
+**Application in Action**
+
+Following is a sample animation of the application in action:
+
+![sample GIF of the application in action](https://github.com/skarlekar/faces/blob/master/mel.gif)
 
 Conclusion
 ----------
