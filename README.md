@@ -122,7 +122,7 @@ To start working in your new Python virtual environment:
     $ source activate faces
 
 If you are working in Windows, use:
-    
+
     $ activate faces
 
 ### Install Git
@@ -144,6 +144,12 @@ Update the *setTwilio.sh* in the repository with your credentials from Twilio an
     $ cd faces
     $ vi setTwilio.sh
     $ source ./setTwilio.sh
+
+Windows users, use:
+	
+	$ cd faces
+    $ edit setTwilio.cmd
+    $ setTwilio.cmd
 
 #### Test Twilio Setup
 To test your Twilio setup, run the Python program *sendmessage.py* under *twilioTester*. This program simply sends a message to your mobile number using your Twilio credentials. *Note: Make sure you are running this in your Python 2.7 environment.*
