@@ -121,6 +121,10 @@ To start working in your new Python virtual environment:
 
     $ source activate faces
 
+If you are working in Windows, use:
+    
+    $ activate faces
+
 ### Install Git
 Git is a popular code revision control system. To install Git for your respective operating system follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
