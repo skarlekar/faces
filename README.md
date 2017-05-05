@@ -226,6 +226,10 @@ Set your Twilio credentials by running the shell script you updated earlier.
 
     $ source ./setTwilio.sh
 
+Windows users, use:
+
+    $ setTwilio.cmd
+
 Change directory to the twilioCommunicationService directory and deploy the service by running *sls deploy* as shown below:
 
     $ cd twilioCommunicationService
